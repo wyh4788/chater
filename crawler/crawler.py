@@ -1,8 +1,7 @@
 import praw
-import numpy as np
 from  __builtin__ import any as b_any
 
-NOT_ALLOWED_KEY_WORDS=["http", "r/", "[removed]", "ad spam site"]
+NOT_ALLOWED_KEY_WORDS=["http", "r/", "[removed]", "ad spam site", "[deleted]"]
 
 question, answer = [], []
 
@@ -26,18 +25,17 @@ def main():
 
     for url in urls:
         submission = reddit.submission(url=url)
-        submission.comments.replace_more(limit=None)
+        submission.comments.replace_more(limit=3)
 
         for comment in submission.comments:
             finder(comment)
 
-    question_out = np.asanyarray(question)
-    answer_out = np.asanyarray(answer)
-
     with file('question.out', 'a') as outfile:
-        np.savetxt(outfile, question_out, fmt='%s')
+        for q in question:
+            print>>outfile, q.encode('ascii','ignore')
 
     with file('answer.out', 'a') as outfile:
-        np.savetxt(outfile, answer_out, fmt='%s')
+        for a in answer:
+            print>>outfile, a.encode('ascii','ignore')
 
 main()
