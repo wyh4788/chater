@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e17bd9d6-5828-475d-9942-a4e6c5a30aed" name="tc_nlp" url="http://65.19.181.248">
+        <fileTransfer host="65.19.181.248" port="22" rootFolder="/home/paperspace/Desktop/tc_nlp" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
