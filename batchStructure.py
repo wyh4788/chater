@@ -5,7 +5,6 @@ class Batch:
     """
 
     def __init__(self):
-        self.msg = 'here'
         self.inputMsgIDs = []
         self.inputMsgLength = []
         self.outputResponseIDs = []
